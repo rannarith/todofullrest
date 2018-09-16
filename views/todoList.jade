@@ -1,0 +1,35 @@
+html
+  head
+    link(rel="stylesheet", href="stylesheets/styles.css")
+  body
+    .container
+      p
+        label(for='new-task') Add Item
+        input#new-task(type='text' )
+        button Add
+      h3 Todo
+      ul#incomplete-tasks
+        each task in Task 
+          li
+            input(type='checkbox')
+            label.id #{task.id}
+            label #{task.name} 
+            input(type='text')
+            button.edit Edit
+            button.delete Delete
+            //- li.editMode
+            //-     input(type='checkbox')
+            //-     label Go Shopping
+            //-     input(type='text', value='Go Shopping')
+            //-     button.edit Edit
+            //-     button.delete Delete
+      h3 Completed
+      ul#completed-tasks
+        li
+          input(type='checkbox', checked='')
+          label See the Doctor
+          input(type='text')
+          button.edit Edit
+          button.delete Delete
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(type='text/javascript', src='js/app.js')
